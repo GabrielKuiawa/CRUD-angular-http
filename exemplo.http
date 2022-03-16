@@ -1,0 +1,31 @@
+http://localhost:3000/people
+  
+###
+
+GET  http://localhost:3000/people/6
+
+###
+
+POST http://localhost:3000/people  HTTP/1.1
+Content-Type: application/json
+
+{
+    "desc": "novo",
+    "teorema_id": "id"
+}
+
+###
+
+
+PUT  http://localhost:3000/people/2  HTTP/1.1
+Content-Type: application/json
+
+{
+    "desc": "novo22",
+    "teorema_id": "id2"
+}
+
+###
+
+
+DELETE  http://localhost:3000/people/2  HTTP/1.1
