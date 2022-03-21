@@ -37,8 +37,13 @@
       "id": 18
     },
     {
-      "nome": "lol",
+      "desc": "novo22",
+      "teorema_id": "id2",
       "id": 19
+    },
+    {
+      "nome": "lol",
+      "id": 20
     }
   ]
 }

@@ -12,7 +12,7 @@ import { CursosService } from '../cursos.service';
 })
 export class CursosListagemComponent implements OnInit {
 
-  cursos!:Curso[];
+
   cursos$!: Observable<Curso[]>
 
   constructor(private service:CursosService) { }

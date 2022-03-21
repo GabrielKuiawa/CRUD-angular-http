@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CursosListagemComponent } from './cursos-listagem/cursos-listagem.component';
-import { AppRoutingModule } from '../app-routing.module';
-
-
+import { CursosFormComponent } from './cursos-form/cursos-form.component';
+import { CursosRoutingModule } from './cursos-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    CursosListagemComponent
+    CursosListagemComponent,
+    CursosFormComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    CursosRoutingModule,
+    ReactiveFormsModule
   ],
-  exports:[CursosListagemComponent]
+  exports:[
+    CursosListagemComponent,
+    CursosFormComponent
+  ]
 })
 export class CursosModule { }
