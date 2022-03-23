@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Curso } from '../cursos';
 import { CursosService } from '../cursos.service';
@@ -15,7 +16,11 @@ export class CursosListagemComponent implements OnInit {
 
   cursos$!: Observable<Curso[]>
 
-  constructor(private service:CursosService) { }
+  constructor(
+    private service:CursosService,
+    private router:Router,
+    private route:ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     // this.service.list()
@@ -24,5 +29,7 @@ export class CursosListagemComponent implements OnInit {
     this.cursos$ = this.service.list()
 
   }
-
+  onEdit(id:number){
+    this.router.navigate(['editar', id],{ relativeTo:this.route});
+  }
 }
