@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CursosService } from '../cursos.service';
 import { Location } from '@angular/common'
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Cursos2Service } from '../cursos2.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class CursosFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private service: CursosService, 
+    private service: Cursos2Service, 
     private location: Location,
     private route: ActivatedRoute,
     private router: Router

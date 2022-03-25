@@ -4,6 +4,7 @@ import { catchError, empty, Observable } from 'rxjs';
 import { Curso } from '../cursos';
 import { CursosService } from '../cursos.service';
 import { BsModalService } from 'ngx-bootstrap/modal'
+import { Cursos2Service } from '../cursos2.service';
 
 @Component({
   selector: 'app-cursos-listagem',
@@ -17,7 +18,7 @@ export class CursosListagemComponent implements OnInit {
   cursos$!: Observable<Curso[]>
 
   constructor(
-    private service:CursosService,
+    private service:Cursos2Service,
     private router:Router,
     private route:ActivatedRoute
     ) { }
