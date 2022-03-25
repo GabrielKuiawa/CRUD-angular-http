@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 
 
@@ -19,7 +20,7 @@ import { CursosModule } from './cursos/cursos.module';
     CursosModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CursosService } from '../cursos.service';
 import { Location } from '@angular/common'
-import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cursos-form',
@@ -16,11 +16,13 @@ export class CursosFormComponent implements OnInit {
   submitted = false;
 
 
+
   constructor(
     private fb: FormBuilder, 
     private service: CursosService, 
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -34,6 +36,8 @@ export class CursosFormComponent implements OnInit {
     // .subscribe(curso => this.updateForm(curso));  
 
     //console.log(registro);
+
+ 
 
     const curso = this.route.snapshot.data['curso'];
 
@@ -69,7 +73,11 @@ export class CursosFormComponent implements OnInit {
       }
 
       this.service.save(this.form.value).subscribe(
-        success =>{ console.log('success atualizar curso')},
+        success =>{
+          console.log('success atualizar curso')
+          this.router.navigate(['cursos'])
+
+      },
         error => {console.log('erro atualizar curso')}
       );
 
@@ -97,7 +105,9 @@ export class CursosFormComponent implements OnInit {
   onCancel(){
     this.submitted = false; 
     this.form.reset();
+    this.router.navigate(['cursos'])
     //console.log('cancel');
   }
+
 
 }

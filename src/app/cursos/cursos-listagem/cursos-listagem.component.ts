@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { catchError, empty, Observable } from 'rxjs';
 import { Curso } from '../cursos';
 import { CursosService } from '../cursos.service';
+import { BsModalService } from 'ngx-bootstrap/modal'
 
 @Component({
   selector: 'app-cursos-listagem',
@@ -12,7 +13,6 @@ import { CursosService } from '../cursos.service';
 
 })
 export class CursosListagemComponent implements OnInit {
-
 
   cursos$!: Observable<Curso[]>
 
@@ -26,10 +26,31 @@ export class CursosListagemComponent implements OnInit {
     // this.service.list()
     // .subscribe(dados => this.cursos = dados);
 
-    this.cursos$ = this.service.list()
+    this.onRefresh();  
 
+  }
+  onRefresh() {
+    this.cursos$ = this.service.list().pipe(
+      // map(),
+      // tap(),
+      // switchMap(),
+      catchError(error => {
+        console.error(error);
+        // this.error$.next(true);
+        return empty();
+      })
+    );
   }
   onEdit(id:number){
     this.router.navigate(['editar', id],{ relativeTo:this.route});
   }
+  onDelete(curso:Curso){
+    this.service.remove(curso.id).subscribe(
+      success => {
+        console.log("tudo certo")
+        this.onRefresh();
+      } ,
+      error => console.log("tudo errado")
+    );  
+  }  
 }

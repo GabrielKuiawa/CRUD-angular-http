@@ -1,81 +1,8 @@
 {
   "people": [
     {
-      "nome": "novo",
-      "id": 10
-    },
-    {
-      "nome": "lol",
-      "id": 11
-    },
-    {
-      "nome": "lol",
-      "id": 12
-    },
-    {
-      "nome": "lol",
-      "id": 13
-    },
-    {
-      "nome": "lol",
-      "id": 14
-    },
-    {
-      "nome": "lol",
-      "id": 15
-    },
-    {
-      "nome": "lol",
-      "id": 16
-    },
-    {
-      "nome": "lol",
-      "id": 17
-    },
-    {
-      "nome": "lol",
-      "id": 18
-    },
-    {
-      "desc": "novo22",
-      "teorema_id": "id2",
-      "id": 19
-    },
-    {
-      "nome": "lol",
-      "id": 20
-    },
-    {
-      "nome": "angular",
-      "id": 21
-    },
-    {
-      "nome": "angular",
-      "id": 22
-    },
-    {
-      "nome": "thiago",
-      "id": 23
-    },
-    {
-      "nome": "angular",
-      "id": 24
-    },
-    {
-      "nome": "angular",
-      "id": 25
-    },
-    {
-      "id": 26,
-      "nome": "2222"
-    },
-    {
-      "id": 27,
-      "nome": "angular"
-    },
-    {
-      "id": 28,
-      "nome": "sorrisos e bjs"
+      "id": 1,
+      "nome": "255"
     }
   ]
 }

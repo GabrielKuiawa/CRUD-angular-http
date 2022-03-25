@@ -34,4 +34,7 @@ private readonly API = 'http://localhost:3000/people';
     }
     return this.create(curso);
   }
+  remove(id:number){
+    return this.http.delete(`${this.API}/${id}`).pipe(take(1));
+  }
 };

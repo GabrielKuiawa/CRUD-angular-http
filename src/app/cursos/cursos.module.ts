@@ -4,6 +4,7 @@ import { CursosListagemComponent } from './cursos-listagem/cursos-listagem.compo
 import { CursosFormComponent } from './cursos-form/cursos-form.component';
 import { CursosRoutingModule } from './cursos-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CursosRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     CursosListagemComponent,
